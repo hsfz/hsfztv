@@ -1,0 +1,19 @@
+transcoder:
+  build: ./transcoder/
+  ports:
+  - "1935:1935"
+  volumes:
+  - "data:/data"
+  links:
+  - hls
+hls:
+  build: ./hls/
+  volumes:
+  - "data:/data"
+nginx:
+  build: ./nginx/
+  ports:
+  - "60008:80"
+  volumes:
+  - "data:/data"
+
