@@ -13,7 +13,7 @@ hls:
 nginx:
   build: ./nginx/
   ports:
-  - "60008:80"
+  - "80:80"
   volumes:
   - "data:/data"
 
