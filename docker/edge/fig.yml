@@ -5,9 +5,17 @@ transcode:
   volumes:
   - "data:/data"
   links:
-  - distribute
+  - hls
 
-distribute:
-  build: ./distribute/
+hls:
+  build: ./hls/
   volumes:
   - "data:/data"
+
+nginx:
+  build: ./nginx/
+  ports:
+  - "80:80"
+  volumes:
+  - "data:/data"
+
